@@ -27,6 +27,10 @@ export class HeroComponent implements OnInit {
     }
   ];
 
+  showname(hero){
+    alert(hero.name);
+  }
+
 
   constructor() { }
 

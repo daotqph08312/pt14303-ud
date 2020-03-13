@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="row">
+        <div class="col-10 offset-1">
+            <div class="row post-item" *ngFor="let item of data">
+                <div class="col-4">
+                    <img [src]="item.img" class="img-fluid">
+                </div>
+                <div class="col-8">
+                    <h4>{{item.title}}</h4>
+                    <p>{{item.desc}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
