@@ -1,9 +1,57 @@
 <h2>Danh sách Hero:</h2>
+
+<!-- Hiển thị giá trị của 1 biến {{}} -->
+<!-- Gán gtri cho 1 thuộc tính href, src => [href] [src] -->
+<!-- Thực hiện 1 event cho 1 thẻ (sự kiện) => (mouseover) (click) -->
+<!-- thực hiện vòng lặp *ngFor="let item of array" -->
+<!-- Thực hiện câu lệnh điều kiện *ngIf="điều kiện" -->
+<div class="row">
+    <div class="col-3">
+        <div class="form-group">
+            <label for="">Hero name:</label>
+            <input 
+                [value]="addHero.name"
+                (keyup)="addHero.name = $event.target.value"
+                type="text" class="form-control" >
+        </div>
+        <div class="row">
+            <div class="col-6 offset-3">
+                <img [src]="addHero.img" class="img-fluid">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="">Image:</label>
+            <input 
+                [value]="addHero.img"
+                (keyup)="addHero.img = $event.target.value"
+                type="text" class="form-control" >
+        </div>
+        <div class="form-group">
+            <label for="">Gender:</label>
+            <select class="form-control" 
+                [value]="addHero.gender"
+                (change)="addHero.gender = $event.target.value"
+            >
+                <option
+                    value="1">Nam</option>
+                <option 
+                    value="2">Nữ</option>
+            </select>
+        </div>
+        <div class="text-center">
+            <button 
+                (click)="addNewHero()"
+                class="btn btn-sm btn-success">Cập nhật</button>
+        </div>
+    </div>
+</div>
 <ul>
-    <li *ngFor="let h of heros" (click)="showname(h)">
+    <li *ngFor="let h of heros" >
         <img [src]="h.img" width="70">
         {{h.name}} - 
         <span *ngIf="h.gender==1">Nam</span>
-        <span *ngIf="h.gender!=1">Nữ</span>
+        <span *ngIf="h.gender!=1">Nữ</span>&nbsp;
+        <button (click)="addHero = h" class="btn btn-sm btn-info">Sửa</button>&nbsp;
+        <button (click)="removeHero(h)" class="btn btn-sm btn-danger">Xóa</button>
     </li>
 </ul>

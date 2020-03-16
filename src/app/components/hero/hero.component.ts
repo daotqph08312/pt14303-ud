@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hero.component.css']
 })
 export class HeroComponent implements OnInit {
-  heros = [
+  
+  heros: Array<any> = [
     {
       id: 1,
       name: 'batman',
@@ -26,11 +27,47 @@ export class HeroComponent implements OnInit {
       img: 'https://genk.mediacdn.vn/thumb_w/640/2019/12/27/disney-confirms-tom-hiddleston-in-loki-tv-series-1159835-1280x0-550x309-15774393354961727586012-crop-15774393404131684282229.jpeg'
     }
   ];
-
-  showname(hero){
-    alert(hero.name);
+  addHero = {
+    id: null,
+    name: null,
+    img: null,
+    gender: 1
   }
 
+  removeHero(hero){
+    // thực hiện loại bỏ phần tử vừa gửi lên khỏi mảng heros
+    this.heros = this.heros.filter(function(val){
+      return val.id != hero.id;
+    });
+  }
+
+  addNewHero(){
+    //nếu id != 0 thì sẽ là cập nhật, nếu = 0 thì thêm mới
+    if(this.addHero.id == null){
+      // tìm ra id lớn nhất
+      let maxId = 0;
+      this.heros.forEach(function(val, ind){
+        if(val.id >= maxId){
+          maxId = val.id;
+        }
+      });
+      
+      // => id mới = id lớn nhất + 1
+      this.addHero.id = ++maxId;
+      // chuyển giá trị gender sang dạng số
+      this.addHero.gender = Number(this.addHero.gender);
+
+      // add thêm 1 phần tử nữa vào trong mảng heros
+      this.heros.push(this.addHero);
+    }
+
+    this.addHero = {
+      id: null,
+      name: null,
+      img: null,
+      gender: 1
+    }
+  }
 
   constructor() { }
 
