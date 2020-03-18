@@ -34,12 +34,12 @@ export class HeroComponent implements OnInit {
     gender: 1
   }
 
-  removeHero(hero){
-    // thực hiện loại bỏ phần tử vừa gửi lên khỏi mảng heros
-    this.heros = this.heros.filter(function(val){
-      return val.id != hero.id;
-    });
-  }
+  // removeHero(hero){
+  //   // thực hiện loại bỏ phần tử vừa gửi lên khỏi mảng heros
+  //   this.heros = this.heros.filter(function(val){
+  //     return val.id != hero.id;
+  //   });
+  // }
 
   addNewHero(){
     //nếu id != 0 thì sẽ là cập nhật, nếu = 0 thì thêm mới
@@ -67,6 +67,12 @@ export class HeroComponent implements OnInit {
       img: null,
       gender: 1
     }
+  }
+
+  showRemoveData(removeHero){
+    this.heros = this.heros.filter(function(val){
+      return val.id != removeHero.id;
+    });
   }
 
   constructor() { }

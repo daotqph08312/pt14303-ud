@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-hero-detail',
@@ -7,6 +7,11 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class HeroDetailComponent implements OnInit {
   @Input() heroData;
+  @Output() onRemove = new EventEmitter();
+
+  onRemoveChild(){
+    this.onRemove.emit(this.heroData);
+  }
 
   constructor() { }
 

@@ -48,6 +48,8 @@
 <div class="cotainer">
     <h2>Danh sách heroes</h2>
     <div class="row">
-        <app-hero-detail *ngFor="let h of heros" [heroData]="h"></app-hero-detail>
+        <app-hero-detail *ngFor="let h of heros" 
+            (onRemove)="showRemoveData($event)"
+            [heroData]="h"></app-hero-detail>
     </div>
 </div>
