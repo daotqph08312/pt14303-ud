@@ -45,13 +45,9 @@
         </div>
     </div>
 </div>
-<ul>
-    <li *ngFor="let h of heros" >
-        <img [src]="h.img" width="70">
-        {{h.name}} - 
-        <span *ngIf="h.gender==1">Nam</span>
-        <span *ngIf="h.gender!=1">Nữ</span>&nbsp;
-        <button (click)="addHero = h" class="btn btn-sm btn-info">Sửa</button>&nbsp;
-        <button (click)="removeHero(h)" class="btn btn-sm btn-danger">Xóa</button>
-    </li>
-</ul>
+<div class="cotainer">
+    <h2>Danh sách heroes</h2>
+    <div class="row">
+        <app-hero-detail *ngFor="let h of heros" [heroData]="h"></app-hero-detail>
+    </div>
+</div>

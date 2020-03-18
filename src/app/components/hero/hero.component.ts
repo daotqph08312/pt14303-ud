@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeroComponent implements OnInit {
   
-  heros: Array<any> = [
+  heros = [
     {
       id: 1,
       name: 'batman',
