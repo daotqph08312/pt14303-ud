@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ListHeroComponent } from './list-hero/list-hero.component';
 import { HeroComponent } from './hero/hero.component';
 import { HeroFormComponent } from './hero-form/hero-form.component';
+import { TestGithubComponent } from './test-github/test-github.component';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { HeroFormComponent } from './hero-form/hero-form.component';
     ListHeroComponent,
     HeroComponent,
     HeroFormComponent,
+    TestGithubComponent,
   ],
   imports: [
     BrowserModule,
