@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HeroComponent } from './components/hero/hero.component';
-import { HeroDetailComponent } from './components/hero-detail/hero-detail.component';
-import { PostListComponent } from './components/post-list/post-list.component';
+import { ListHeroComponent } from './list-hero/list-hero.component';
+import { HeroComponent } from './hero/hero.component';
+import { HeroFormComponent } from './hero-form/hero-form.component';
 
 
 const routes: Routes = [
-  { path: '', component: HeroComponent },
-  { path: 'detail', component: HeroDetailComponent },
-  { path: 'bai-tap-1', component: PostListComponent }
+  { path: '', component: ListHeroComponent },
+  { path: 'detail-hero', component: HeroComponent },
+  { path: 'hero-form', component: HeroFormComponent }
 ];
 
 @NgModule({

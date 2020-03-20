@@ -3,16 +3,17 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeroComponent } from './components/hero/hero.component';
-import { HeroDetailComponent } from './components/hero-detail/hero-detail.component';
-import { PostListComponent } from './components/post-list/post-list.component';
+import { ListHeroComponent } from './list-hero/list-hero.component';
+import { HeroComponent } from './hero/hero.component';
+import { HeroFormComponent } from './hero-form/hero-form.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
+    ListHeroComponent,
     HeroComponent,
-    HeroDetailComponent,
-    PostListComponent
+    HeroFormComponent,
   ],
   imports: [
     BrowserModule,
